@@ -17,6 +17,9 @@
 -(IBAction) takePhotoButtonPressed:(id)sender forEvent:(UIEvent*)event;
 -(void)takePictureTo;
 -(void)setCountdown:(NSString*)count;
+-(UIImage*)imageByScalingAndCroppingForSize:(UIImage*)anImage toSize:(CGSize)targetSize;
+-(UIImage*)imageCorrectedForCaptureOrientation:(UIImage*)anImage;
+
 
 // Declare some properties (to be explained soon)
 @property (strong, nonatomic) CustomCamera* plugin;
