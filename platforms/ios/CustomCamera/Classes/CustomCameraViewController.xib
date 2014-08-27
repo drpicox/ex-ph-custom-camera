@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="countdownLabel" destination="FB8-Fu-wyZ" id="tqK-RL-QNe"/>
                 <outlet property="frameImage" destination="Pav-Pq-dW2" id="eaK-5A-DjK"/>
+                <outlet property="scanButton" destination="13" id="st2-da-463"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -22,10 +23,11 @@
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="13">
-                    <rect key="frame" x="63" y="373" width="194" height="107"/>
+                    <rect key="frame" x="63" y="308" width="194" height="107"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="55"/>
+                    <inset key="insetFor6xAndEarlier" minX="0.0" minY="-75" maxX="0.0" maxY="75"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="55"/>
                     <inset key="contentEdgeInsets" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
                     <state key="normal" title="Scan!">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

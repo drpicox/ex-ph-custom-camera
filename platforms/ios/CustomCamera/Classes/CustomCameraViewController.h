@@ -26,5 +26,6 @@
 @property (strong, nonatomic) UIImagePickerController* picker;
 @property (weak, nonatomic) IBOutlet UILabel *countdownLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *frameImage;
+@property (weak, nonatomic) IBOutlet UIButton *scanButton;
 
 @end

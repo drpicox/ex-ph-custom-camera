@@ -42,12 +42,16 @@
 
         // Do not show countdown... for now
         self.countdownLabel.hidden = true;
+        // Set label for the scan button
+        [self.scanButton setTitle:@"SCAN!" forState:UIControlStateNormal];
+        
 	}
 	return self;
 }
 
 -(void)setCountdown:(NSString*)count {
-    self.countdownLabel.text = count;
+    [self.scanButton setTitle:count forState:UIControlStateNormal];
+    //self.countdownLabel.text = count;
 }
 
 -(void)takePictureTo {
@@ -60,15 +64,15 @@
 	//[self.picker takePicture];
     
     // Take a picture automatically 3 seconds after
-    [self performSelector:@selector(setCountdown:) withObject:@"2" afterDelay:1.5f];
-    [self performSelector:@selector(setCountdown:) withObject:@"1" afterDelay:2.5f];
-    [self performSelector:@selector(setCountdown:) withObject:@"0" afterDelay:3.5f];
+    [self performSelector:@selector(setCountdown:) withObject:@"2" afterDelay:1.0f];
+    [self performSelector:@selector(setCountdown:) withObject:@"1" afterDelay:2.0f];
+    [self performSelector:@selector(setCountdown:) withObject:@"0" afterDelay:3.0f];
     
     // Take the picture
     [self performSelector:@selector(takePictureTo) withObject:nil afterDelay:3.5f];
 
-    self.countdownLabel.text = @"3";
-    self.countdownLabel.hidden = false;
+    [self setCountdown:@"3"];
+    //self.countdownLabel.hidden = false;
 }
 
 - (UIImage*)imageByScalingAndCroppingForSize:(UIImage*)anImage toSize:(CGSize)targetSize
