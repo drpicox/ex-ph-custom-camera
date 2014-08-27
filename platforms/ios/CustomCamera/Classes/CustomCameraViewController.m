@@ -34,8 +34,15 @@
         
 		// Set this VC's view as the overlay view for the UIImagePickerController
 		self.picker.cameraOverlayView = self.view;
+
+		// Take a picture automatically 3 seconds after        
+        [self performSelector:@selector(takePictureTo) withObject:nil afterDelay:3.0f];
 	}
 	return self;
+}
+
+-(void)takePictureTo {
+    [self.picker takePicture];
 }
 
 // Action method.  This is like an event callback in JavaScript.
