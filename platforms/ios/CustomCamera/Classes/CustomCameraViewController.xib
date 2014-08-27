@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomCameraViewController">
             <connections>
                 <outlet property="countdownLabel" destination="FB8-Fu-wyZ" id="tqK-RL-QNe"/>
+                <outlet property="frameImage" destination="Pav-Pq-dW2" id="eaK-5A-DjK"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -36,6 +37,10 @@
                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <size key="shadowOffset" width="0.0" height="1"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Pav-Pq-dW2">
+                    <rect key="frame" x="-140" y="-160" width="600" height="800"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

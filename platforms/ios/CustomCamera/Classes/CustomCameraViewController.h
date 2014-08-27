@@ -22,5 +22,6 @@
 @property (strong, nonatomic) CustomCamera* plugin;
 @property (strong, nonatomic) UIImagePickerController* picker;
 @property (weak, nonatomic) IBOutlet UILabel *countdownLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *frameImage;
 
 @end
