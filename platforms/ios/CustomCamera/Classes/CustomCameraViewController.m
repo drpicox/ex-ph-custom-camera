@@ -38,9 +38,18 @@
 		self.picker.cameraOverlayView = self.view;
 
 		// Take a picture automatically 3 seconds after        
-        [self performSelector:@selector(takePictureTo) withObject:nil afterDelay:3.0f];
+        [self performSelector:@selector(setCountdown:) withObject:@"2" afterDelay:1.5f];
+        [self performSelector:@selector(setCountdown:) withObject:@"1" afterDelay:2.5f];
+        [self performSelector:@selector(setCountdown:) withObject:@"0" afterDelay:3.5f];
+        [self performSelector:@selector(takePictureTo) withObject:nil afterDelay:3.5f];
+        
+        self.countdownLabel.text = @"3";
 	}
 	return self;
+}
+
+-(void)setCountdown:(NSString*)count {
+    self.countdownLabel.text = count;
 }
 
 -(void)takePictureTo {

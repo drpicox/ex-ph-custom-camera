@@ -16,9 +16,11 @@
 // Action method
 -(IBAction) takePhotoButtonPressed:(id)sender forEvent:(UIEvent*)event;
 -(void)takePictureTo;
+-(void)setCountdown:(NSString*)count;
 
 // Declare some properties (to be explained soon)
 @property (strong, nonatomic) CustomCamera* plugin;
 @property (strong, nonatomic) UIImagePickerController* picker;
+@property (weak, nonatomic) IBOutlet UILabel *countdownLabel;
 
 @end
