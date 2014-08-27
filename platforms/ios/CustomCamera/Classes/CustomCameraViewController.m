@@ -8,6 +8,7 @@
 
 #import "CustomCamera.h"
 #import "CustomCameraViewController.h"
+#import <Cordova/NSData+Base64.h>
 
 @implementation CustomCameraViewController
 
@@ -21,7 +22,8 @@
 		// Configure the UIImagePickerController instance
 		self.picker.sourceType = UIImagePickerControllerSourceTypeCamera;
 		self.picker.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
-		self.picker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+        //cameraPicker.cameraDevice = (UIImagePickerControllerCameraDevice)[cameraDirection intValue];
+		self.picker.cameraDevice = UIImagePickerControllerCameraDeviceFront;//UIImagePickerControllerCameraDeviceRear;
 		self.picker.showsCameraControls = NO;
         
 		// Make us the delegate for the UIImagePickerController
@@ -58,16 +60,17 @@
 	UIImage* image = [info objectForKey:UIImagePickerControllerOriginalImage];
     
 	// Get a file path to save the JPEG
-	NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	NSString* documentsDirectory = [paths objectAtIndex:0];
-	NSString* filename = @"test.jpg";
-	NSString* imagePath = [documentsDirectory stringByAppendingPathComponent:filename];
+	//NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	//NSString* documentsDirectory = [paths objectAtIndex:0];
+	//NSString* filename = @"test.jpg";
+	//NSString* imagePath = [documentsDirectory stringByAppendingPathComponent:filename];
     
 	// Get the image data (blocking; around 1 second)
 	NSData* imageData = UIImageJPEGRepresentation(image, 0.5);
     
 	// Write the data to the file
-	[imageData writeToFile:imagePath atomically:YES];
+	//[imageData writeToFile:imagePath atomically:YES];
+    NSString* imagePath = [imageData base64EncodedString];
     
 	// Tell the plugin class that we're finished processing the image
 	[self.plugin capturedImageWithPath:imagePath];
