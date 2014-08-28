@@ -239,37 +239,52 @@
         [self accumulateFrequencies:frequencies from:data width:width height:height startX:925 startY:375];
          */
         // Four "points" of the MRZ
-        [self accumulateFrequencies:frequencies from:data width:width height:height startX:316 startY:375];
-        [self accumulateFrequencies:frequencies from:data width:width height:height startX:478 startY:375];
-        [self accumulateFrequencies:frequencies from:data width:width height:height startX:641 startY:375];
-        [self accumulateFrequencies:frequencies from:data width:width height:height startX:803 startY:375];
+        [self accumulateFrequencies:frequencies from:data width:width height:height startX:316 startY:355];
+        [self accumulateFrequencies:frequencies from:data width:width height:height startX:478 startY:355];
+        [self accumulateFrequencies:frequencies from:data width:width height:height startX:641 startY:355];
+        [self accumulateFrequencies:frequencies from:data width:width height:height startX:803 startY:355];
         
+/*
         int threshold, accum = 0; // max accum === 10000 (50*50 * 2)
-        for (threshold = 0; threshold < 256 && accum < 1800; threshold++) {
+        for (threshold = 0; threshold < 256 && accum < 1500; threshold++) {
             accum += frequencies[threshold];
         }
-        if (accum > 2100) {
+        if (accum > 1900) {
             threshold--;
         }
-        
+  */
+        int threshold1, threshold2,dist, accum=0;
+        for (threshold1 = 0; threshold1 < 256 && accum < 500; threshold1++) {
+            accum += frequencies[threshold1];
+        }
+        for (threshold2 = threshold1+1; threshold2 < 256 && accum < 2000; threshold2++) {
+            accum += frequencies[threshold2];
+        }
+        if (accum > 2500) {
+            threshold2--;
+        }
+        dist = threshold2 - threshold1 + 1;
+
         for (i = 0; i < max; i+=4) {
             
-            unsigned char red,green,blue;
+            unsigned char red,green,blue,val;
             
             red = data[i+1];
             green = data[i+2];
             blue = data[i+3];
             
             int sum = (red + green + blue)/3;
-            if (sum > threshold) {
-                red = green = blue = 255;
+            if (sum > threshold2) {
+                val = 255;
+            } else if (sum < threshold1) {
+                val = 0;
             } else {
-                red = green = blue = 0;
+                val = ((sum - threshold1) * 256) / dist;
             }
             
-            data[i+1]=red;
-            data[i+2]=green;
-            data[i+3]=blue;
+            data[i+1]=val;
+            data[i+2]=val;
+            data[i+3]=val;
         }
     }
     
