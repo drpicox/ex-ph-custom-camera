@@ -194,7 +194,7 @@
     image = [self imageByScalingAndCroppingForSize:image toSize:targetSize];
     
 	// Get the image data (blocking; around 1 second)
-	NSData* imageData = UIImageJPEGRepresentation(image, 0.5);
+	NSData* imageData = UIImagePNGRepresentation(image); //UIImageJPEGRepresentation(image, 0.5);
     
 	// Write the data to the file
 	//[imageData writeToFile:imagePath atomically:YES];
