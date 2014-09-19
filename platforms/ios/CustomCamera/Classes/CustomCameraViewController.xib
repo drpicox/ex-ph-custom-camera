@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomCameraViewController">
             <connections>
+                <outlet property="cancelButton" destination="K0I-Bz-L7Y" id="JN6-lM-1gG"/>
                 <outlet property="countdownLabel" destination="FB8-Fu-wyZ" id="tqK-RL-QNe"/>
                 <outlet property="frameImage" destination="Pav-Pq-dW2" id="eaK-5A-DjK"/>
                 <outlet property="scanButton" destination="13" id="st2-da-463"/>
@@ -46,6 +47,18 @@
                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <size key="shadowOffset" width="0.0" height="1"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" id="K0I-Bz-L7Y">
+                    <rect key="frame" x="254" y="15" width="46" height="46"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="42"/>
+                    <size key="titleShadowOffset" width="1" height="1"/>
+                    <state key="normal" title="X">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="cancelPhotoButtonPressed:" destination="-1" eventType="touchUpInside" id="AAD-7N-D1S"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

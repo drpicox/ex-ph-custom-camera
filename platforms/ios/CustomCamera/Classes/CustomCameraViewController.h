@@ -15,6 +15,7 @@
 
 // Action method
 -(IBAction) takePhotoButtonPressed:(id)sender forEvent:(UIEvent*)event;
+-(IBAction) cancelPhotoButtonPressed:(id)sender;
 -(void)takePictureTo;
 -(void)setCountdown:(NSString*)count;
 -(UIImage*)imageByScalingAndCroppingForSize:(UIImage*)anImage toSize:(CGSize)targetSize;
@@ -27,5 +28,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *countdownLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *frameImage;
 @property (weak, nonatomic) IBOutlet UIButton *scanButton;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
 @end

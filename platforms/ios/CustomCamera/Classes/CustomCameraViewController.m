@@ -75,6 +75,10 @@
     //self.countdownLabel.hidden = false;
 }
 
+- (IBAction)cancelPhotoButtonPressed:(id)sender {
+    [self.plugin cancelCamera];
+}
+
 - (UIImage*)imageByScalingAndCroppingForSize:(UIImage*)anImage toSize:(CGSize)targetSize
 {
     UIImage* sourceImage = anImage;

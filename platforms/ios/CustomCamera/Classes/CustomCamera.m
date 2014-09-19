@@ -27,6 +27,15 @@
 	[self.viewController presentViewController:self.overlay.picker animated:YES completion:nil];
 }
 
+-(void) cancelCamera {
+	[self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"cancel"] callbackId:self.latestCommand.callbackId];
+    
+	// Unset the self.hasPendingOperation property
+	self.hasPendingOperation = NO;
+    
+    [self.viewController dismissModalViewControllerAnimated:YES];
+}
+
 // Method called by the overlay when the image is ready to be sent back to the web view
 -(void) capturedImageWithPath:(NSString*)imagePath {
 	[self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:imagePath] callbackId:self.latestCommand.callbackId];

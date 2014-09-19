@@ -15,6 +15,9 @@
 // Cordova command method
 -(void) openCamera:(CDVInvokedUrlCommand*)command;
 
+// allow cancel picture
+-(void) cancelCamera;
+
 // Create and override some properties and methods (these will be explained later)
 -(void) capturedImageWithPath:(NSString*)imagePath;
 @property (strong, nonatomic) CustomCameraViewController* overlay;
